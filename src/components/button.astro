@@ -1,0 +1,28 @@
+---
+const {url,text, bgcolor, txtcolor } = Astro.props
+---
+
+<a href={url} style={`background-color: ${bgcolor || '#1A73E8'}; color: ${txtcolor || '#FFFFFF'};`}>{text}</a>
+
+<style>
+    a {
+        display: inline-flex;
+        text-decoration: none;
+        text-align: center;
+        align-items: center;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        padding: 15px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        min-height: 15px;
+        min-width: 10px;
+    }
+    
+    a:hover {
+        animation:shadow-drop-br .4s cubic-bezier(.25,.46,.45,.94) both;
+    }
+
+    @keyframes shadow-drop-br{0%{box-shadow:0 0 0 0 transparent}100%{box-shadow:12px 12px 20px -12px rgba(0,0,0,.35)}}
+
+</style>

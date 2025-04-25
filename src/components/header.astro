@@ -22,6 +22,11 @@ import Button from "./button.astro";
 
 <style>
   header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,6 +34,9 @@ import Button from "./button.astro";
     height: 100px;
     overflow: hidden;
     font-weight: 600;
+    background-color: #ffffffb1;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
     transition: padding 0.3s ease-in-out;
   }
 

@@ -1,0 +1,42 @@
+---
+const { title, description} = Astro.props;
+import Button from "./button.astro";
+---
+
+<div class="function-card">
+    <div class="function-card-icon">
+        <slot/>
+    </div>
+    <p class="function-card-title">{title}</p>
+    <p class="function-card-description">{description}</p>
+    <Button text="Mas Información" bgcolor="#858585" txtcolor="#000000"></Button>
+</div>
+
+<style>
+    .function-card {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 50px;
+    }
+    .function-card-icon {
+        width: 50px;
+        color: #1A73E8;
+    }
+
+    .function-card-title {
+        text-align: center;
+        margin: 0%;
+        font-size: 20px;
+        width: 250px;
+    }
+
+    .function-card-description {
+        font-size: 14px;
+        width: 250px;
+        text-align: center;
+    }
+
+
+</style>

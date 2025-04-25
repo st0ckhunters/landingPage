@@ -1,8 +1,8 @@
 ---
 import Header from "../components/header.astro"
 import MainCard from "../components/maincard.astro"
+import Functioncard from "../components/functioncard.astro"
 ---
-
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -13,7 +13,48 @@ import MainCard from "../components/maincard.astro"
 	</head>
 	<body>
 		<Header></Header>
-		<MainCard title="Gestiona tu inventario y ventas con precisión" content="StockHunters te ayuda a organizar tu negocio, ahorrar tiempo y vender más."></MainCard>
+		<MainCard id="inicio" title="Gestiona tu inventario y ventas con precisión" content="StockHunters te ayuda a organizar tu negocio, ahorrar tiempo y vender más."></MainCard>
+		
+		<div id="funcionalidades" class="function">
+			<h2>Funcionalidades</h2>
+			<div>	
+				<Functioncard title="Control preciso del inventario en Tiempo Real" description="Evita fugas de mercancia, ademas contamos con la opcion del control de entradas y salidas con historial detallado">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-box-seam-fill" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.01-.003.268-.108a.75.75 0 0 1 .558 0l.269.108.01.003zM10.404 2 4.25 4.461 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339L8 5.961 5.596 5l6.154-2.461z"/>
+					</svg>
+				</Functioncard>
+
+				<Functioncard title="Gestión de Ventas y Facturación" description="Registro asequible de ventas con generación de comprobantes con un historial de ventas por producto, fecha y cliente ">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-file-earmark-ruled-fill" viewBox="0 0 16 16">
+						<path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M3 9h10v1H6v2h7v1H6v2H5v-2H3v-1h2v-2H3z"/>
+					</svg>
+
+				</Functioncard>
+
+				<Functioncard title="Acceso desde cualquier dispositivo" description="Accede desde cualquier plataforma web responsive (celular, tablet, PC)">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-shield-fill-plus" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.8 11.8 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7 7 0 0 0 1.048-.625 11.8 11.8 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.54 1.54 0 0 0-1.044-1.263 63 63 0 0 0-2.887-.87C9.843.266 8.69 0 8 0m-.5 5a.5.5 0 0 1 1 0v1.5H10a.5.5 0 0 1 0 1H8.5V9a.5.5 0 0 1-1 0V7.5H6a.5.5 0 0 1 0-1h1.5z"/>
+					</svg>
+
+				</Functioncard>
+			</div>
+		</div>
+
+		<div id="planes" class="plans">
+			<h2>Planes</h2>
+
+		</div>
+
+		<div id="blog" class="blog">
+			<h2>Blog</h2>
+
+		</div>
+
+		<div id="preguntas">
+
+		</div>
+		
+
 	</body>
 </html>
 
@@ -21,6 +62,36 @@ import MainCard from "../components/maincard.astro"
 	body{
 		margin: 0px;
 		font-family: 'Inter', sans-serif;
+	}
+	h2{
+		font-size: 25px;
+		text-align: center;
+		margin-top: 50px;
+	}
+	.function{
+		background-color: #f4f4f4 ;
+		margin-top: 100px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.plans{
+		background-color: #f4f4f4 ;
+		margin-top: 100px;
+
+		align-items: center;
+	}
+	.blog{
+		background-color: #f4f4f4 ;
+		margin-top: 100px;
+
+		align-items: center;
+	}
+	
+	.blog{
+		background-color: #f4f4f4 ;
+		margin-top: 100px;
+		align-items: center;
 	}
 
 </style>

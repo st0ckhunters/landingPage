@@ -1,8 +1,9 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
+// astro.config.mjs
+import { defineConfig } from "astro/config";
 
-// https://astro.build/config
+const [org, repo] = process.env.GITHUB_REPOSITORY?.split("/") || [];
+
 export default defineConfig({
-  site: "https://st0ckhunters.github.io",
-  base: "landingPage",
+  site: `https://${org}.github.io/${repo}/`,
+  base: `/${repo}/`,
 });

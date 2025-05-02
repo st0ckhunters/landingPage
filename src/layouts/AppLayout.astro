@@ -1,9 +1,24 @@
 ---
+// export propierties 
 const { title } = Astro.props;
+
+// import components and styles
 import Header from '../components/header.astro';
 import Footer from '../components/footer.astro';
 import "../styles/global.css";
+
+// define urls
+const footer_urls = {
+	url_fb: "https://www.facebook.com/",
+	url_ig: "https://www.instagram.com/",
+	url_X: "https://twitter.com/"
+}
+
+const header_urls = {
+	url_contact: ""
+}
 ---
+
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -14,17 +29,20 @@ import "../styles/global.css";
 	</head>
 
 	<body>
-		<Header></Header>
+		<Header/>
+
         <main>
             <slot></slot>
         </main>
-		<Footer></Footer>
+
+		<Footer {...footer_urls} />
 	</body>
 
 </html>
 
 <style>
 	body{
+		font-family: var(--font-family);
 		margin: 0px;
 		display: flex;
 		flex-direction: column;

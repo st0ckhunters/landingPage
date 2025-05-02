@@ -1,26 +1,25 @@
 ---
 import Button from "./button.astro";
+
+const { url_icon, url_functions, url_plans, url_blog, url_contact_us} = Astro.props;
+
 ---
 
 <header>
-  <a href="#inicio" class="logo-link">
-    <picture class="logo">
-      <source srcset="./icon.svg"  media="(max-width: 600px)">
-      <img src="./logo.svg" class="logo" alt="Logo StockHunters"/>
-    </picture >
-    <!-- <img src="/logo.svg" alt="Logo StockHunters" class="logo" /> -->
+  <a href = {url_icon} class="logo-link">
+      <img src="./logo_ico.svg" alt="Logo StockHunters" class="logo-ico"/>
   </a>
+
   <nav>
-    <ul>
-      <li><a href="#funcionalidades">Funcionalidades</a></li>
-      <li><a href="#planes">Planes</a></li>
-      <li><a href="#blog ">Blog</a></li>
-      <Button url="/login" text="Iniciar Sesion"></Button>
-    </ul>
+      <a href={url_functions} class="link">Funcionalidades</a>
+      <a href={url_plans} class="link">Planes</a>
+      <a href={url_blog} class="link">Blog</a>
+      
+      <Button url={url_contact_us} target="_blank" text="Contactanos"></Button>
   </nav>
 </header>
 
-<style>
+<!-- <style>
   header {
     position: sticky;
     top: 0;
@@ -31,7 +30,7 @@ import Button from "./button.astro";
     justify-content: space-between;
     align-items: center;
     padding: 0 60px;
-    height: 100px;
+    height: 70px;
     overflow: hidden;
     font-weight: 600;
     background-color: #ffffffb1;
@@ -94,4 +93,68 @@ import Button from "./button.astro";
     }
   }
 
+</style> -->
+
+<style>
+  header{
+    background-color: #ffffffb1;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    top: 0;
+
+    backdrop-filter: blur(5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.07);
+  }
+
+  .link{
+    padding: 0 15px;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--primary-text-color);
+  }
+  .link:hover{
+    color: var(--primary-color);
+  }
+  nav{
+    padding-right: 50px;
+    transition: padding-right 0.3s ease-in-out;
+  }
+
+  .logo-ico{
+    padding-left: 150px;
+    width: 60px;
+    transition: padding-left 0.3s ease-in-out;
+  }
+
+
+  /* Resposive */
+  @media screen and (max-width: 1200px) {
+    .logo-ico{
+      padding-left: 100px;
+    }
+    nav{
+      padding-right: 25px;
+    }
+
+  }
+
+  @media screen and (max-width: 800px) {
+    .logo-ico{
+      padding-left: 80px;
+    }
+    .link{
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .logo-ico{
+      padding-left: 40px;
+    }
+
+  }
 </style>

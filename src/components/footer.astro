@@ -3,7 +3,7 @@ const {url_fb, url_ig, url_X} = Astro.props;
 ---
 
 <footer>
-  <img src="./icon.svg" alt="icon-footer-stockhunter" class="logo-footer"/>
+  <img src="./logo_ico.svg" alt="icon-footer-stockhunter" class="logo-footer"/>
   
   <div class="social-container">
     <p >¡Conectate con nosotros!</p>
@@ -40,6 +40,7 @@ const {url_fb, url_ig, url_X} = Astro.props;
 
   footer{
     height: 100px;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     background-color: var(--bg-color);
@@ -114,6 +115,9 @@ const {url_fb, url_ig, url_X} = Astro.props;
     }
     .social-container{
       padding-right: 40px;
+    }
+    .social-container p{
+      width: 100px;
     }
 
   }

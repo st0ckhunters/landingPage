@@ -1,0 +1,35 @@
+:root{
+    --primary-color: #1A73E8;
+    --secondary-color: #C8C8C8;
+    --terceary-color: #606060;
+
+    --bg-color: #FFFFFF; 
+    --secondary-bg-color: #F4F4F4;
+
+    --primary-text-color: #262626;
+    --secondary-text-color: #606060;
+    --link-color: #327DFF;
+    
+    --hover-color: #0056b3;
+
+    --font-family: 'Inter', sans-serif;
+    --font-size: 16px;  
+}
+
+.dark{
+    --primary-color: #1A73E8;
+    --secondary-color: #C8C8C8;
+    --terceary-color: #606060;
+
+    --bg-color: #171717; 
+    --secondary-bg-color: #F4F4F4;
+
+    --primary-text-color: #ffffff;
+    --secondary-text-color: #606060;
+    --link-color: #327DFF;
+    
+    --hover-color: #0056b3;
+    
+    --hover-color: #0056b3;
+}
+ 

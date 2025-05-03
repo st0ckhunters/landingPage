@@ -32,4 +32,23 @@
     
     --hover-color: #0056b3;
 }
- 
+
+
+/* Colores de fondo */
+.bg-primary {
+    background-color: var(--primary-color);
+}
+
+.bg-secondary {
+    background-color: var(--secondary-color);
+}
+
+
+/* Colores de texto */
+.txt-light {
+    color: #FFFFFF;
+}
+
+.txt-dark {
+    color: #000000;
+}

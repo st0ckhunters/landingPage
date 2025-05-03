@@ -1,0 +1,146 @@
+---
+---
+<div class="faq-section">
+    <div class="image-container">
+        <img src="./logo_full.svg" alt="FAQ Image" class="faq-image" />
+    </div>
+
+    <div class="faq-content">
+        <p class="faq-title">Preguntas Frecuentes</p>
+        
+        <div class="question-container"> 
+
+            <div class="question">
+
+                <p>¿Necesito conocimientos técnicos para usar StockHunters?</p> 
+
+                <button class="toggle-btn"> + </button>
+            
+            </div>
+            
+            <div class="answer">
+                <p>No, la plataforma está diseñada para ser intuitiva y fácil de usar. En pocos minutos podrás comenzar a gestionar tu inventario y ventas sin complicaciones.</p>
+            </div>
+        
+        </div>
+
+        <div class="question-container"> 
+
+            <div class="question">
+
+                <p>¿Puedo usar StockHunters desde mi celular o tablet?</p> 
+
+                <button class="toggle-btn"> + </button>
+            
+            </div>
+            
+            <div class="answer">
+                <p>Sí, puedes acceder a la plataforma desde cualquier celular o tablet con conexión a internet. La interfaz está optimizada para dispositivos móviles, así que puedes trabajar cómodamente desde donde estés.</p>
+            </div>
+        
+        </div>
+
+        <div class="question-container"> 
+
+            <div class="question">
+
+                <p>¿Qué pasa si tengo más de una tienda o sucursal?</p> 
+
+                <button class="toggle-btn"> + </button>
+            
+            </div>
+            
+            <div class="answer">
+                <p>StockHunters te permite gestionar varias tiendas desde una misma cuenta. Cada sucursal puede tener su propio inventario, ventas y reportes, y también puedes ver información consolidada de todo el negocio.</p>
+            </div>
+        
+        </div>
+
+    </div>
+</div>
+
+<style>
+
+    .faq-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+
+    }
+
+    .faq-section {
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-evenly;
+        background-color: var(--secondary-bg-color);
+        flex-wrap: wrap;
+    }
+    
+    .toggle-btn {
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px;
+        border: none;
+        color: rgb(0, 0, 0);
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-left: 10px;
+        cursor: pointer;
+        transition: background-color 0.4s ease-in-out;
+    }
+
+    .toggle-btn:hover {
+        background-color: rgb(236, 236, 236);
+
+    }
+
+    .question-container {
+        display: flex;
+        border-radius: 5px;;
+        flex-direction: column;
+        margin-bottom: 20px;
+        background-color: rgb(255, 255, 255);
+        justify-content: center;
+        width: 350px;
+        padding: 8px;
+    }
+
+    .image-container img {
+        width: 300px;
+    }
+
+    .question{
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+    }
+
+    .answer {
+        display: none;
+        color: var(--secondary-text-color);
+    }
+
+</style>
+
+<script>
+    document.querySelectorAll(".toggle-btn").forEach( button => {
+        
+        button.addEventListener("click", function(){
+            const container = this.closest(".question-container");
+            const answer = container.querySelector(".answer");
+
+            if(answer.style.display === "block") {
+                answer.style.display = "none";
+                this.innerHTML = " + ";
+            } else {
+                answer.style.display = "block";
+                this.innerHTML = "-";
+            }
+          
+        });
+    });
+
+</script>

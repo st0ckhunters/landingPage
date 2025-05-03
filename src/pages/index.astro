@@ -1,20 +1,14 @@
 ---
-import Header from "../components/header.astro"
+import AppLayout from "../layouts/AppLayout.astro"
 import MainCard from "../components/maincard.astro"
 import Functioncard from "../components/functioncard.astro"
+import Faq from "../components/faq.astro"
+
 ---
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="./icon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>StockHunters</title>
-	</head>
-	<body>
-		<Header></Header>
-		<MainCard id="inicio" title="Gestiona tu inventario y ventas con precisión" content="StockHunters te ayuda a organizar tu negocio, ahorrar tiempo y vender más."></MainCard>
-		
+
+<AppLayout title="StockHunters">
+    	<MainCard id="inicio" title="Gestiona tu inventario y ventas con precisión" content="StockHunters te ayuda a organizar tu negocio, ahorrar tiempo y vender más."></MainCard>
+
 		<div id="funcionalidades" class="function">
 			<h2>Funcionalidades</h2>
 			<div>	
@@ -39,59 +33,16 @@ import Functioncard from "../components/functioncard.astro"
 				</Functioncard>
 			</div>
 		</div>
-
-		<div id="planes" class="plans">
-			<h2>Planes</h2>
-
-		</div>
-
-		<div id="blog" class="blog">
-			<h2>Blog</h2>
-
-		</div>
-
-		<div id="preguntas">
-
-		</div>
-		
-
-	</body>
-</html>
+    
+    <Faq></Faq>
+</AppLayout>
 
 <style>
-	body{
-		margin: 0px;
-		font-family: 'Inter', sans-serif;
-	}
-	h2{
-		font-size: 25px;
-		text-align: center;
-		margin-top: 50px;
-	}
-	.function{
-		background-color: #f4f4f4 ;
+    	.function{
+		background-color: var(--bg-color) ;
 		margin-top: 100px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
-	.plans{
-		background-color: #f4f4f4 ;
-		margin-top: 100px;
-
-		align-items: center;
-	}
-	.blog{
-		background-color: #f4f4f4 ;
-		margin-top: 100px;
-
-		align-items: center;
-	}
-	
-	.blog{
-		background-color: #f4f4f4 ;
-		margin-top: 100px;
-		align-items: center;
-	}
-
 </style>

@@ -1,0 +1,60 @@
+---
+import BlogItem from './blogitem.astro';
+import Button from "./button.astro";
+---
+<div class="blog-section">
+    <h2 class="blog-section-title">Últimos blogs</h2>
+    <div class="blog-container">
+        <BlogItem
+            title="Cómo mejorar el control de inventario en pequeños negocios"
+            description="Un repaso por las mejores practicas para evitar pérdidas y errores frecuentes en la gestion diaria."
+            link=""
+            imgpath="https://eldigitaldeasturias.com/radio/wp-content/uploads/2025/02/Alquilar-una-bodega-en-Ciudad-de-Mexico-650x420.jpg"
+            imgalt=""
+        ></BlogItem>
+        <BlogItem
+                title="Tendencias 2025: el futuro de la administración de inventario y ventas"
+                description="Una mirada a las innovaciones y herramientas digitales emergentes hoy en dia."
+                link=""
+                imgpath="https://caad-design.com/wp-content/uploads/2020/04/innovacion-en-sector-retail-1-featured-image-20200409-caad-retail-design-barcelona.jpg"
+                imgalt=""
+        ></BlogItem>
+        <BlogItem
+                title="La importancia de la planeación financiera"
+                description="La planificación financiera ayuda a tomar mejores decisiones, evitar riesgos y asegurar que tu negocio sea rentable."
+                link=""
+                imgpath="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSHVIHc-56k3qjfmpklJkvbj7MnZjX5FJ82RIZw78DVPvRM5eyH"
+                imgalt=""
+        ></BlogItem>
+    </div>
+    <div class="blog-button">
+        <Button url="" text="Ir"></Button>
+    </div>
+</div>
+
+<style>
+    .blog-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+    }
+
+    .blog-section-title{
+        text-align: center;
+        padding: 25px;
+    }
+
+    .blog-section{
+        margin: 20px 0 20px 0;
+        padding: 15px 0 15px 0;
+        background: var(--bg-color);
+    }
+
+    .blog-button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 35px 0 20px 0;
+    }
+</style>

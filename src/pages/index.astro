@@ -3,7 +3,10 @@ import AppLayout from "../layouts/AppLayout.astro"
 import MainCard from "../components/maincard.astro"
 import Functioncard from "../components/functioncard.astro"
 import Faq from "../components/faq.astro"
-
+import Ourplans from "../components/ourplans.astro"
+import Blog from "../components/blog.astro"
+import Reviews from "../components/reviews.astro"
+import Moreinfo from "../components/moreinfo.astro"
 ---
 
 <AppLayout title="StockHunters">
@@ -33,14 +36,30 @@ import Faq from "../components/faq.astro"
 				</Functioncard>
 			</div>
 		</div>
-    
+
+	<div class="plans">
+		<Ourplans></Ourplans>
+	</div>
+
+	<div class="blog">
+		<Blog></Blog>
+	</div>
+
+	<div class="reviews">
+		<Reviews></Reviews>
+	</div>
+
+	<div class="moreinfo">
+		<Moreinfo></Moreinfo>
+	</div>
+
     <Faq></Faq>
 </AppLayout>
 
 <style>
-    	.function{
+	.function{
 		background-color: var(--bg-color) ;
-		margin-top: 100px;
+		padding-top: 25px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;

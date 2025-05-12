@@ -1,0 +1,48 @@
+---
+const {title, description, link, imgpath, imgalt} = Astro.props
+---
+<div class="blog-item-card">
+    <div class="blog-item-image">
+        <img src={imgpath} alt={imgalt}/>
+    </div>
+    <div class="blog-item-content">
+        <div class="blog-item-title">{title}</div>
+        <div class="blog-item-description">{description}</div>
+        <div class="blog-item-links">
+            <a href={link}>Conocer más</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .blog-item-card {
+        flex: 1 1 250px;
+        max-width: 250px;
+        background: var(--secondary-bg-color);
+    }
+    .blog-item-content{
+        padding: 13px;
+        font-size: 14px;
+    }
+
+    .blog-item-title{
+        font-weight: bold;
+    }
+
+    .blog-item-description{
+        color: #606060;
+    }
+
+    .blog-item-description, .blog-item-links, .blog-item-content{
+        padding-top: 10px;
+    }
+
+    img{
+        width: 250px;
+        height: 150px;
+    }
+
+    img:hover{
+        opacity: 0.5;
+    }
+</style>

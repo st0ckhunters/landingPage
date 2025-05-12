@@ -1,0 +1,94 @@
+---
+const {title, price, buttontext, pricedescription,
+    description1,description2,description3,description4,description5,description6,
+    } = Astro.props;
+import Button from "./button.astro";
+---
+<div class="plan-card">
+    <div class="plan-card-header">
+        <div class="plan-card-title"><h2>{title}</h2></div>
+    </div>
+    <div class="plan-card-content">
+        <div class="plan-card-price">
+            <div class="price-amount">
+                <p class="currency">s/&nbsp</p>
+                <p class="price">{price}&nbsp</p>
+                <p class="duration">/mes</p>
+            </div>
+        </div>
+        <div class="plan-card-price-description">
+            <div class="description">{pricedescription}</div>
+        </div>
+        <div class="plan-card-description">
+            <ul class="description-ul">
+                <li class="description-ul-item">{description1}</li>
+                <li class="description-ul-item">{description2}</li>
+                <li class="description-ul-item">{description3}</li>
+                <li class="description-ul-item">{description4}</li>
+                <li class="description-ul-item">{description5}</li>
+                <li class="description-ul-item">{description6}</li>
+            </ul>
+        </div>
+        <div class="plan-button">
+            <Button url="" text={buttontext}></Button>
+        </div>
+    </div>
+</div>
+
+<style>
+    .plan-card-description {
+        font-size: 14px;
+    }
+
+    .plan-card-price-description {
+        font-size: 14px;
+        color: #606060;
+    }
+
+    .plan-card {
+        flex: 1 1 250px;
+        max-width: 250px;
+        background: var(--bg-color);
+    }
+
+    .plan-button, .plan-card-header, .price-amount{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .currency{
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .price{
+        font-size: 40px;
+    }
+
+    .duration{
+        font-size: 14px;
+    }
+
+    .description{
+        text-align: center;
+    }
+
+    .plan-card-header{
+        background-color: #1A73E8;
+        color: white;
+    }
+
+    .description-ul, .description {
+        line-height: 1.6;
+    }
+
+    .price-amount{
+        max-height: 80px;
+    }
+
+    .plan-button{
+        padding-bottom: 20px;
+    }
+
+</style>

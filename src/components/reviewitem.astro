@@ -1,0 +1,62 @@
+---
+const {description, imgpath, imgalt, name, job} = Astro.props
+---
+<div class="review-card">
+    <div class="review-description">{description}</div>
+    <div class="review-contact-container">
+        <div class="img-wrapper">
+            <img src={imgpath} alt={imgalt}/>
+        </div>
+        <div class="review-contact">
+            <p class="review-name">{name}</p>
+            <p class="review-job">{job}</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .review-card {
+        flex: 1 1 250px;
+        max-width: 400px;
+        background: var(--bg-color);
+        padding: 15px;
+    }
+
+    .review-contact-container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .review-description {
+        font-size: 14px;
+        padding-bottom: 20px;
+    }
+
+    img{
+        width: 64px;
+        height: 64px;
+        border-radius: 50%; /* makes perfect circle */
+        object-fit: cover;  /* keeps aspect ratio */
+    }
+
+    .img-wrapper{
+        //width: 150px;
+        //height: 150px;
+        padding-right: 20px;
+        border-radius: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .review-name{
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .review-job{
+        color: #606060;
+    }
+
+</style>

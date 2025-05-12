@@ -1,0 +1,64 @@
+---
+import Plan from "./plan.astro";
+---
+<div class="ourplans-section">
+    <h2 class="ourplans-title">Nuestros Planes</h2>
+    <div class="plans-container">
+        <Plan
+            title="Basico"
+            price="0"
+            buttontext="Empieza Gratis"
+            pricedescription="Ideal para negocios que recien comienzan"
+            description1="Hasta 50 productos"
+            description2="1 usuario"
+            description3="Gestion de inventario basica"
+            description4="Reportes simples"
+            description5="Acceso desde cualquier dispositivo"
+            description6="Soporte por correo"
+        ></Plan>
+        <Plan
+                title="Pro"
+                price="49"
+                buttontext="Actualizar al plan Pro"
+                pricedescription="Para negocios en crecimiento que necesitas mas control"
+                description1="Hasta 1,000 productos"
+                description2="Hasta 3 usuarios"
+                description3="Reportes avanzados"
+                description4="Alerta de stock bajo"
+                description5="Gestion de clientes y proveedores"
+                description6="Soporte por correo"
+        ></Plan>
+        <Plan
+                title="Empresarial"
+                price="99"
+                buttontext="Actualizar a plan Empresarial"
+                pricedescription="Para empresas con operaciones mas complejas"
+                description1="Productos ilimitados"
+                description2="Usuarios ilimitados"
+                description3="Multialmacen y multisucursal"
+                description4="Panel de metricas personalizables"
+                description5="Soporte prioritario"
+                description6="Capacitacion inicial incluida"
+        ></Plan>
+    </div>
+</div>
+
+<style>
+    .ourplans-section {
+        margin: 20px 0 20px 0;
+        padding: 15px 0 15px 0;
+    }
+
+    .plans-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .ourplans-title {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+</style>

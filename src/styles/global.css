@@ -43,6 +43,13 @@
     background-color: var(--secondary-color);
 }
 
+.bg-tertiary {
+    background-color: var( --bg-color);
+}
+
+.bg-tertiary:hover {
+    background-color: var(--secondary-color);
+}
 
 /* Colores de texto */
 .txt-light {

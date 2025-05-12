@@ -1,0 +1,43 @@
+---
+import Reviewitem from "./reviewitem.astro"
+---
+<div class="reviews-section">
+    <h2 class="reviews-section-title">Testimonios</h2>
+    <div class="reviews-container">
+        <Reviewitem
+            description="Antes llevaba el inventario con hojas de calculo que siempre terminaban mal actualizadas. Desde que uso StockHunters todo esta automatizado. Me llegan alertas cuando falta stock y puedo ver mis ventas en tiempo real. Es como tener un asistente que nunca falla."
+            imgpath="https://t3.ftcdn.net/jpg/02/96/71/80/360_F_296718017_z7yavasr2g737XMwi9iNcOMaAHE84w0u.jpg"
+            imgalt="Choijun Yeon, un empresario"
+            name="Choijun Yeon"
+            job="Empresario"
+        ></Reviewitem>
+        <Reviewitem
+                description="Implementamos StockHunters en nuestras operaciones para centralziar la gestion de productos y ventas en nuestras sucursales. La plataforma nos permitio reducir errores de inventario en mas del 40% y optimizar el tiempo del equipo. Es una herramienta clave para nuestra eficiencia operativa."
+                imgpath="https://as2.ftcdn.net/jpg/02/22/88/05/1000_F_222880542_iXCNyE6Mq96aIZrIfM78V4NmcxNdPyTx.jpg"
+                imgalt="Soob Kein, un ingeniero"
+                name="Soob Kein"
+                job="Ingeniero"
+        ></Reviewitem>
+    </div>
+</div>
+
+<style>
+    .reviews-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .reviews-section-title{
+        text-align: center;
+        padding: 25px;
+    }
+
+    .reviews-section{
+        margin: 15px;
+        padding: 0 0 30px 0;
+    }
+
+
+</style>

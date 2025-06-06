@@ -203,4 +203,17 @@ export default {
       "Commencez dès aujourd'hui avec StockHunters et découvrez comment nous pouvons vous aider à optimiser votre inventaire et augmenter vos ventes.",
     button: "Contactez-nous",
   },
+  pages: {
+    contact: {
+      title: "Contactez-nous",
+      description:
+        "Vous avez des questions ou besoin d'aide ? Notre équipe est là pour vous aider. Remplissez le formulaire et nous vous contacterons dès que possible.",
+      form: {
+        name: "Nom",
+        email: "E-mail",
+        message: "Message",
+        button: "Envoyer le message",
+      },
+    },
+  },
 };

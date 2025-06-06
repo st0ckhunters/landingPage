@@ -201,4 +201,19 @@ export default {
 
     button: "Contacto",
   },
+
+  pages: {
+    contact:{
+      title: "Contáctanos",
+      description:
+        "¿Tienes preguntas o necesitas ayuda? Nuestro equipo está aquí para asistirte. Completa el formulario y nos pondremos en contacto contigo lo antes posible.",
+      form: {
+        name: "Nombre",
+        email: "Correo Electrónico",
+        message: "Mensaje",
+        button: "Enviar Mensaje",
+      },
+    }
+  }
+
 };

@@ -1,13 +1,13 @@
 export const base = import.meta.env.BASE_URL;
 
 export const header = {
-  home: "#main",
+  home: base ,
   features: "#feature",
   plans: "#plan",
   blogs: "#blog",
-  reviews:"#review",
-  faq:"#faq",
-  contact_me: "",
+  reviews: "#review",
+  faq: "#faq",
+  contact_me:`./contact`,
 };
 
 export const mainCard = {

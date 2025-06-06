@@ -1,63 +1,75 @@
 ---
+import AppLayout from '../../layouts/app.layout.astro';
+import { type Language, translations } from "../../i18n/language";
+
+import Button from '../../components/shared/button.astro';
+
+const lang = Astro.params.lang as Language;
+const t = translations[lang];
+
+const forms = t?.pages?.contact;
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "es" } },
+    { params: { lang: "fr" } },
+  ];
+}
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario de Contacto</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        padding: 2rem;
-        background: #f5f5f5;
-      }
-      form {
-        background: white;
+<AppLayout title ="StockHunters" t={t} lang={lang}>
+    <h1>{forms?.title}</h1>
+    <p>{forms?.description}</p>
+    <form method="POST" action="/api/contacto">
+      <label for="nombre">{forms?.form?.name}</label>
+      <input type="text" id="nombre" name="nombre" required />
+
+      <label for="email">{forms?.form?.email}</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="mensaje">{forms?.form?.message}</label>
+      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+      <Button type="submit">{forms?.form?.button}</Button>
+    </form>
+</AppLayout>
+<style>
+
+    h1{
+        text-align: center;
+        color: var(--text-color);
+    }
+    p{
+        display: flex;
+        text-align: center;
+        margin: 0 auto;
+        color: var(--text-color);
+        max-width: 600px;
+        padding-bottom: 20px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        color: var(--text-color);
         padding: 2rem;
         max-width: 500px;
+        align-items: center;
+
         margin: auto;
         border-radius: 8px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      }
-      label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: bold;
-      }
-      input, textarea {
-        width: 100%;
-        padding: 0.75rem;
-        margin-bottom: 1.5rem;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-      }
-      button {
-        background: #0070f3;
-        color: white;
-        padding: 0.75rem 1.5rem;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-      button:hover {
-        background: #005bb5;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Contáctanos</h1>
-    <form method="POST" action="/api/contacto">
-      <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" name="nombre" required />
-
-      <label for="email">Correo electrónico</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="mensaje">Mensaje</label>
-      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-
-      <button type="submit">Enviar</button>
-    </form>
-  </body>
-</html>
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  </style>

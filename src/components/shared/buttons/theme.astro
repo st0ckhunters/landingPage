@@ -1,0 +1,64 @@
+---
+import Button from '../button.astro';
+import { base } from '../../../lib/linker';
+---
+<div class="color-mode" data-base={base} >
+    <Button variant="tools" aria-label="color mode button"> 
+        <span id="color-mode-ico"></span>
+    </Button>
+</div>
+
+<script is="client">
+    
+    function getSystemTheme(){
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function themeDark(){
+        const base = document.querySelector('.color-mode')?.dataset.base || '/';
+        if (document.querySelector('.logo-ico')){
+            document.querySelector('.logo-ico').src = base + 'Isotipo_color.png';
+        }
+    }
+
+    function themeLight(){
+        const base = document.querySelector('.color-mode')?.dataset.base || '/';
+        if (document.querySelector('.logo-ico')){
+            document.querySelector('.logo-ico').src = base + 'Isotipo_white.png';
+        }
+    }
+
+    function applyTheme(theme){
+        document.documentElement.setAttribute('data-theme', theme);
+        theme === 'light' ? themeLight() : themeDark();
+        
+        theme_ico = theme === 'dark' ? '🌙' : '🌞';
+        document.querySelector('#color-mode-ico').innerText = theme_ico;
+        localStorage.setItem('theme', theme);
+    }
+
+    function defaultTheme(){
+        const theme = localStorage.getItem('theme') || getSystemTheme();
+        applyTheme(theme);
+    }
+
+    function toggleTheme(button) {
+        document.querySelector(button).addEventListener("click", () =>{
+            const current = document.documentElement.getAttribute('data-theme');
+            applyTheme(current === 'dark' ? 'light' : 'dark');
+        })
+    }
+    
+    function setThemeFromSystem(){
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            //const storedTheme = localStorage.getItem('theme');
+            applyTheme(e.matches ? 'dark' : 'light');
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        defaultTheme();
+        toggleTheme('.color-mode');
+        setThemeFromSystem();
+    });
+
+</script>

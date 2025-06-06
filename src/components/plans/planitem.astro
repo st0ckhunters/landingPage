@@ -1,0 +1,102 @@
+---
+const {t, type} = Astro.props;
+const item = t?.section?.plans?.items?.[type];
+const price = item.price;
+
+import { plans } from "../../lib/linker";
+import Button from "../shared/button.astro";
+
+const url = plans?.[type];
+---
+
+<div class="plan-item">
+    <div class="plan-item-header">
+        <h3>{item.title}</h3>
+    </div>
+
+    <div class="plan-item-content">
+
+        <div class="plan-item-price">
+            <p class="price-currency">{price?.currency}</p>
+            <p class="price-amount">{price?.value}</p>
+            <p class="price-preiod">{price?.period}</p>
+        </div>
+
+        <div class="plan-item-description">
+            {item.description}
+        </div>
+
+        <div class="plan-item-features">
+            <ul>
+                {item.features.map((feature) =>(
+                    <li>{feature}</li>
+                )
+                )}
+            </ul>
+        </div>
+    
+    </div>
+
+    <div class="plan-item-button">
+        <Button variant="color" url={url}>{item.button}</Button>
+    </div>
+</div>
+
+<style>
+    
+    .plan-item {
+        display: flex;
+        flex-direction: column;
+        max-width: 250px;
+        color: var(--text-color);
+        background: var(--bg-secondary-color);
+        padding: 20px;
+        justify-content: space-between;
+        border-radius: 5px;
+    }
+    
+    .plan-item-button, .plan-item-header, .price-amount{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .plan-item-description {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .plan-item-header {
+        background-color: var(--text-blue);
+        color: var(--text-white);
+        border-radius: 5px;
+    }
+    
+    .plan-item-features {
+        line-height: 1.6;
+    }
+
+    .plan-item-price {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .price-amount{
+        max-height: 80px;
+        font-size: 2.5rem;
+    }
+
+    .price-currency{
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .price-preiod {
+        font-size: 14px;
+    }
+
+</style>

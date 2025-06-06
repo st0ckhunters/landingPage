@@ -1,0 +1,63 @@
+---
+import AppLayout from "../../layouts/app.layout.astro";
+import { type Language, translations } from "../../i18n/language";
+
+const lang = Astro.params.lang as Language;
+const t = translations[lang];
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "es" } },
+    { params: { lang: "fr" } },
+  ];
+}
+
+// components
+
+import MainCard from "../../components/general/maincard.astro";
+import FunctionCard from "../../components/functions/functioncard.astro";
+import PlanCard from "../../components/plans/plancard.astro";
+import BlogCard from "../../components/blogs/blogcard.astro";
+import ReviewCard from "../../components/reviews/reviewcard.astro";
+import FAQCard from "../../components/faq/faqcard.astro";
+
+import InfoBanner from "../../components/general/infobanner.astro";
+---
+
+<AppLayout title="StockHunters" t={t} lang={lang}>
+
+  <div id="main">
+    <MainCard t={t}></MainCard>
+  </div>
+
+  <div id="feature">
+    <FunctionCard t={t}></FunctionCard>
+  </div>
+
+  <div id="plan">
+    <PlanCard t={t}></PlanCard>
+  </div>
+
+  <div id="blog">
+    <BlogCard t={t}></BlogCard> 
+  </div>
+
+  <div id="review">
+    <ReviewCard t={t}></ReviewCard> 
+  </div>
+
+  <div id="banner">
+    <InfoBanner t={t}></InfoBanner>
+  </div>
+
+  <div id="faq">
+    <FAQCard t={t}></FAQCard>
+  </div>
+
+</AppLayout>
+
+
+<style>
+
+</style>

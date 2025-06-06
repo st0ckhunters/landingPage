@@ -1,0 +1,88 @@
+---
+const { t } = Astro.props;
+const {fb, ig, X } = Astro.props;
+import { icons } from "../../lib/linker"
+import SvgIcon  from "../../lib/svg/SvgIcon.astro";
+---
+
+<footer>
+    <div class="logo-container">
+        <img src= { icons.logo } alt="logo stockhunters" class="logo-ico"/>
+    </div>
+
+    <div class="social-media">
+        <p> {t.footer.social.title} </p>
+    
+        <div class="media-container">
+            <a href={fb} target="_blank" class="icon-link">
+                <SvgIcon name="facebook" variant=""/>
+            </a>
+            <a href={ig} target="_blank" class="icon-link">
+                <SvgIcon name="instagram" variant=""/>
+            </a>
+            <a href={X} target="_blank" class="icon-link">
+                <SvgIcon name="x" variant=""/>
+            </a>
+        </div>
+        <div class="attribution">
+            <a class="attribution" href="https://storyset.com/people" target="_blank">People illustrations by Storyset</a>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+        align-items: center;
+        width: 100%;
+        background-color: var(--primary-color);
+        box-shadow: 6px 0px 8px rgba(0, 0, 0, 0.07);
+    }
+    .logo-ico, .logo-container {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 40px;
+    }
+
+    .social-media{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: var(--text-white);
+        padding-right: 40px;
+
+    }
+    .icon-link{
+        color: var(--text-white);
+        text-decoration: none;
+    }
+    .icon-link:hover{
+        color: var(--link-color);
+    }
+
+    .attribution{
+        font-size: 0.6rem;
+        color: var(--text-white);
+        text-decoration: none;
+        margin-top: 10px;
+    }
+
+    @media screen and (max-width: 480px) {
+        footer{
+            justify-content: center;
+        }
+        .logo-container{
+            display: none;
+        }
+        .social-media{
+            padding: 0;
+        }
+    }
+</style>
+

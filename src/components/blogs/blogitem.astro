@@ -1,0 +1,68 @@
+---
+const {t, index} = Astro.props
+
+import Button from '../shared/button.astro';
+import {blog} from '../../lib/linker';
+
+const item = t?.section?.blogs?.items[index];
+const itemLinker = blog.items[index];
+---
+
+<div class="blog-item-card">
+    <div class="blog-item-image">
+        <img src={itemLinker?.imgPath} alt={itemLinker?.imgAlt}/>
+    </div>
+    <div class="blog-item-content">
+        <div class="blog-item-title">{item?.title}</div>
+        <div class="blog-item-description">{item?.description}</div>
+    </div>
+   
+    <Button url=`${itemLinker?.link}` variant="color">{item?.link}</Button>
+ 
+</div>
+
+<style>
+    .blog-item-card {
+        display: flex;
+        flex-direction: column;
+        max-width: 250px;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--bg-color);
+        padding: 10px 10px 30px 10px;
+        border-radius: 5px;
+    }
+    .blog-item-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 13px;
+        font-size: 14px;
+    }
+
+    .blog-item-title{
+        font-size: 1.2em;
+        color: var(--text-blue);
+        font-weight: bold;
+    }
+
+    .blog-item-description{
+        color: var(--text-color);
+    }
+
+    .blog-item-description, .blog-item-links, .blog-item-content{
+        padding-top: 10px;
+    }
+
+    img{
+        width: 250px;
+        height: 150px;
+    }
+
+    .blog-item-card:hover{
+        opacity: 0.8;
+    }
+</style>

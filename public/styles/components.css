@@ -1,0 +1,67 @@
+/* =====================
+   Buttons
+========================= */
+
+.button-variant-generic {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+}
+
+.button-variant-generic:hover {
+    background-color: var(--primary-color-hover);
+}
+
+.button-variant-none {
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+.button-variant-none:hover {
+    background-color: var(--primary-color-hover);
+    color: var(--text-white);
+}
+
+.button-variant-tools {
+    background-color: var(--bg-color); 
+    padding: 15px !important;
+    min-width: 5px !important;
+    min-height: 5px !important;
+    width: 5px;
+    height: 5px;
+    font-size: 13px;
+}
+
+.button-variant-link {
+    background-color: transparent;
+    color: var(--text-color);
+    padding: 0px !important;
+    margin: 0px 10px;
+}
+
+.button-variant-link:hover {
+    animation: none !important;
+    color: var(--link-color);
+}
+
+.button-variant-headerLink{
+    background-color: transparent;
+    color: var(--text-white);
+    padding: 0px !important;
+    margin: 0px 10px;
+}
+
+.button-variant-headerLink:hover{
+    background-color: transparent;
+    color: var(--tertyary-color);
+    padding: 0px !important;
+    margin: 0px 10px;
+}
+
+.button-variant-header{
+    background-color: var(--bg-button-color);
+    color: var(--text-color);
+}
+
+.button-variant-header:hover{
+    background-color: var(--bg-button-hover);
+}

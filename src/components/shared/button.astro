@@ -1,18 +1,19 @@
 ---
-const {url,text, target, bgcolor, txtcolor } = Astro.props;
-
-// Default values for the button
-const bgClass = bgcolor ? `bg-${bgcolor}` : 'bg-primary'; 
-const txtClass = txtcolor ? `txt-${txtcolor}` : 'txt-light';
+const {url, target, variant} = Astro.props;
+const variantClass =  variant ? `button-variant-${variant}`: 'button-variant-generic';
 ---
 
 <a 
     href={url} 
     target={target || '_self'} 
-    class=`${bgClass} ${txtClass}`> {text} </a>
- 
+    class=`${variantClass}`
+    aria-label="button component"> <slot/> 
+</a>
+
 <style>
     a {
+        font-size: 0.8rem;
+        justify-content: center;
         font-family: 'Inter', sans-serif;
         display: inline-flex;
         text-decoration: none;
@@ -38,5 +39,4 @@ const txtClass = txtcolor ? `txt-${txtcolor}` : 'txt-light';
             box-shadow:12px 12px 20px -12px rgba(0,0,0,.35)
         }
     }
-
 </style>

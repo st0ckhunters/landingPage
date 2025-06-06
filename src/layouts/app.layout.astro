@@ -1,0 +1,35 @@
+---
+const {title, lang, t} = Astro.props;
+
+//styles
+import '../styles/main.css';
+
+// components
+import Header from '../components/shared/header.astro';
+import Footer from '../components/shared/footer.astro';
+
+// links header and footer
+import { header, footer, icons, base} from '../lib/linker';
+
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href={icons.logo}/>
+    <link rel="preload" href=`${base}styles/main.css` as="style">
+    <link rel="stylesheet" href= `${base}styles/main.css`>
+    <title>{title}</title>
+</head>
+<body>
+    <Header aria-label="Header content" {...header} t={t}></Header>
+
+    <main aria-label="Main content">
+        <slot/>
+    </main>
+
+    <Footer aria-label="Footer content" {...footer} t={t}></Footer>
+</body>
+</html>

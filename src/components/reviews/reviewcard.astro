@@ -1,8 +1,11 @@
 ---
 import Reviewitem from "./reviewitem.astro"
+const { t } = Astro.props;
+
+const item = t?.section?.reviews;
 ---
 <div class="reviews-section">
-    <h2 class="reviews-section-title">Testimonios</h2>
+    <h2 class="reviews-section-title">{item?.title}</h2>
     <div class="reviews-container">
         <Reviewitem
             description="Antes llevaba el inventario con hojas de calculo que siempre terminaban mal actualizadas. Desde que uso StockHunters todo esta automatizado. Me llegan alertas cuando falta stock y puedo ver mis ventas en tiempo real. Es como tener un asistente que nunca falla."
@@ -32,11 +35,13 @@ import Reviewitem from "./reviewitem.astro"
     .reviews-section-title{
         text-align: center;
         padding: 25px;
+        color: var(--text-color);
     }
 
     .reviews-section{
-        margin: 15px;
-        padding: 0 0 30px 0;
+        margin: 0px;
+        padding: 30px 0px;
+        background: var(--bg-secondary-color);
     }
 
 

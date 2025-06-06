@@ -1,0 +1,45 @@
+---
+import BlogItem from './blogitem.astro';
+
+const { t } = Astro.props;
+
+const blog = t?.section?.blogs;
+
+import Button from "../shared/button.astro";
+---
+<div class="blog-section">
+    <h2 class="blog-section-title">{blog.title}</h2>
+    <div class="blog-container">
+        <BlogItem t={t} index="0"></BlogItem>
+        <BlogItem t={t} index="1"></BlogItem>
+        <BlogItem t={t} index="2"></BlogItem>
+    </div>
+</div>
+
+<style>
+    .blog-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+    }
+
+    .blog-section-title{
+        text-align: center;
+        padding: 25px;
+        color: var(--text-color);
+    }
+
+    .blog-section{
+        margin: 20px 0 0 0;
+        padding: 15px 0 15px 0;
+        background: var(--bg-secondary-color);
+    }
+
+    .blog-button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 35px 0 20px 0;
+    }
+</style>

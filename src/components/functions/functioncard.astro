@@ -1,0 +1,53 @@
+---
+import FunctionItem from "./functionitem.astro";
+import SvgIcon from "../../lib/svg/SvgIcon.astro";
+
+import { functions } from "../../lib/linker";
+
+const {t} = Astro.props;
+
+const card = t?.section?.functions;
+---
+
+<div id="functions" class="function">
+
+    <h2>{card.title}</h2>
+
+    <div class="function-cards">	
+        <FunctionItem t={t}, index="0" link={functions.button_0}>
+            <SvgIcon name="box" variant="color"></SvgIcon>
+        </FunctionItem>
+        
+        <FunctionItem t={t}, index="1" link={functions.button_1}>
+            <SvgIcon name="report" variant="color"></SvgIcon>
+        </FunctionItem>
+
+        <FunctionItem t={t}, index="2" link={functions.button_2}>
+            <SvgIcon name="shield" variant="color"></SvgIcon>
+        </FunctionItem>
+    </div>
+
+</div>
+
+<style>
+    .function{
+        color: var(--text-color);
+        text-align: center;
+        background-color: var(--bg-secondary-color);
+        padding: 40px 0px;
+    }
+
+    .function-cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+    
+    @media screen and (max-width: 300px) {
+        .function-cards{
+            padding: 0px;
+        }
+    }
+
+</style>

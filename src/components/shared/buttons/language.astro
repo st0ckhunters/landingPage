@@ -1,0 +1,54 @@
+---
+import Button from "../button.astro"
+import {base} from "../../../lib/linker"
+---
+<div class="language-button">
+    <Button variant="tools" aria-label="internationalitation button">🌐</Button>
+</div>
+
+<div class="language-menu">
+    <Button variant="link" url=`${base}en/` aria-label="english language button">EN</Button>
+    <Button variant="link" url=`${base}es/` aria-label="spanish language button">ES</Button>
+    <Button variant="link" url=`${base}fr/` aria-label="spanish language button">FR</Button>
+
+</div>
+
+<script>
+    const languageButton = document.querySelector('.language-button');
+    const languageMenu = document.querySelector('.language-menu');
+
+    if (languageButton && languageMenu) {
+        languageButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            languageMenu.classList.toggle('visible');
+        });
+
+        document.addEventListener('click', () => {
+            languageMenu.classList.remove('visible');
+        });
+    }
+</script>
+
+<style>
+    .language-button {
+        position: relative;
+    }
+    .language-menu {
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        top: 70%;
+        right: 18px;
+        z-index: 1000;
+        padding: 10px 0px;
+        background-color: var(--tertyary-color);
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .language-menu.visible {
+        display: flex;
+    }
+
+</style>

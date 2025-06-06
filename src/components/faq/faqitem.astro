@@ -1,0 +1,71 @@
+---
+const {t, index} = Astro.props;
+const item = t?.section?.faq?.items[index];
+---
+
+<div class="question-container"> 
+
+    <div class="question">
+        <p>{item.question}</p> 
+        <button class="toggle-btn"> ➕ </button>
+    </div>
+
+    <div class="answer">
+        <p>{item.answer}</p>
+    </div>
+
+</div>
+
+<style>
+
+    .toggle-btn {
+        background-color: var(--bg-secondary-color);
+        border-radius: 5px;
+        border: none;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-left: 10px;
+        cursor: pointer;
+        transition: background-color 0.4s ease-in-out;
+    }
+
+    .question-container {
+        color: var(--text-color);        
+        display: flex;
+        border-radius: 5px;;
+        flex-direction: column;
+        margin-bottom: 20px;
+        background-color: var(--bg-secondary-color);
+        justify-content: center;
+        width: 400px;
+        padding: 8px 20px;
+    }
+
+    .question{
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .answer {
+        display: none;
+        color: var(--secondary-text-color);
+    }
+
+    @media screen and (max-width: 430px) {
+        .question-container {
+            width: 300px;
+        }        
+    }
+
+    @media screen and (max-width: 360px) {
+        .question-container {
+            width: 200px;
+        }        
+    }
+
+</style>

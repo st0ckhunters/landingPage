@@ -1,0 +1,17 @@
+---
+import { SvgLibrary } from './svgLibrary';
+
+interface Props {
+  name: keyof typeof SvgLibrary;
+  variant: string;
+}
+
+const { name, variant }= Astro.props;
+
+const svgContent = SvgLibrary[name];
+
+const variantName = variant ? `svg-variant-${variant}`:  `svg-variant-colors`;
+
+---
+
+<span class=`${variantName}` set:html={svgContent} />

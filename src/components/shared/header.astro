@@ -1,0 +1,171 @@
+---
+import  Button from './button.astro';
+import Theme from './buttons/theme.astro';
+import Language from './buttons/language.astro';
+
+const { home, features, plans, blogs, reviews, faq, contact_me } = Astro.props;
+const { t } = Astro.props;
+
+const header = t?.header;
+---
+
+<header>
+    <div class="left-side">
+        <button class="menu-toggle" aria-label="open menu button">☰</button>
+        <a href={home} class="logo-link" aria-label="home link">
+            <img src="" alt="Logo StockHunters" class="logo-ico"/>
+            <p class="logo-link-name">StockHunters</p>
+        </a>
+    </div>
+
+    <div class="right-side">
+        <nav class="">
+            <Button url={features} variant="headerLink" aria-label="features link">{header.nav.functions}</Button>
+            <Button url={plans} variant="headerLink" aria-label="plans link">{header.nav.plans}</Button>
+            <Button url={blogs} variant="headerLink" aria-label="blog link">{header.nav.blogs}</Button>
+            <Button url={reviews} variant="headerLink" aria-label="review link">{header.nav.reviews}</Button>
+            <Button url={faq} variant="headerLink" aria-label="review link">{header.nav.faq}</Button>
+        </nav>
+
+        <div class="button">
+            <Button url={contact_me} variant="header" aria-label="contact link">{header.button.contact}</Button>
+        </div>
+
+        <Theme></Theme>
+        <Language></Language>
+    </div>
+</header>
+
+<script is="client">
+    const button = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("header nav");
+
+    if(button && nav) {
+        const button = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("header nav");
+        const body = document.body;
+
+        if (button && nav) {
+        const toggleMenu = () => {
+            nav.classList.toggle("visible");
+            body.classList.toggle("nav-open");
+        };
+
+        const closeMenu = () => {
+            nav.classList.remove("visible");
+            body.classList.remove("nav-open");
+        };
+
+        button.addEventListener("click", (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!nav.contains(e.target) && !button.contains(e.target)) {
+            closeMenu();
+            }
+        });
+
+        window.addEventListener("resize", () => {
+            closeMenu();
+        });
+    }
+  }
+</script>
+
+<style>
+    .right-side, 
+    .left-side, 
+    .logo-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0px 20px;
+        text-decoration: none;
+    }
+
+    .left-side {
+        position: relative;
+    }
+
+    header{
+        position: sticky;
+        margin: 0;
+        top: 0;
+        width: 100%;
+        
+        background-color: var(--primary-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0px;
+        z-index: 1000;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.07);
+        
+    }
+
+    .logo-link{
+        width: 40px;
+        font: 600 1.3rem 'Space Grotesk', sans-serif;
+        color: var(--text-white);
+        cursor: pointer;
+    }
+    .logo-ico{
+        width: 40px;
+        height: 40px;
+    }
+    
+    .logo-link-name{
+        margin: 0;
+    }
+
+    .menu-toggle {
+        display: none;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: var(--text-white);
+        cursor: pointer;
+        animation:rotate-in-center .6s cubic-bezier(.25,.46,.45,.94) both;
+    }
+
+    /* ==== responsive ==== */
+
+    @media screen and (max-width: 790px) {
+        nav{
+            display: none;
+            position: absolute;
+            background-color: var(--primary-color);
+            top: 100%;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            gap: 20px;
+            z-index: 100;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.167);
+            transition: all 0.3s ease-in-out;
+        }
+        nav.visible {
+            display: flex;
+            flex-direction: column;
+        }
+        .menu-toggle {
+            display: flex;
+        }
+        @keyframes rotate-in-center{0%{transform:rotate(-360deg);opacity:0}100%{transform:rotate(0);opacity:1}}
+    }
+
+    @media screen and (max-width: 490px) { 
+       .logo-link-name{
+            display: none;
+        }
+    }
+    
+    @media screen and (max-width: 390px) {
+        .right-side .button{
+            display: none;
+        }
+    }
+</style>

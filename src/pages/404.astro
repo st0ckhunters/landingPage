@@ -1,0 +1,81 @@
+---
+import "../styles/main.css";
+import Theme from "../components/shared/buttons/theme.astro"
+import Button from "../components/shared/button.astro";
+import {base, icons} from "../lib/linker";
+import { defaultRedirect } from "../i18n/language";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Not Found - StockHunters">
+    <link rel="icon" type="image/svg+xml" href={icons.logo}/>
+    <title>Not Found | StockHunters</title>
+</head>
+
+<body data-theme="" aria-label="404 error page">
+    <div class="button" aria-label="Theme toggle button">
+        <Theme></Theme>
+    </div>
+    
+    <div class="container" aria-label="404 error page content">
+        <div class="emoji">😔</div>
+        <h1>404</h1>
+        <h2>Oops! The page you're looking for doesn't exist.</h2>
+        <p> ⚠️ The URL may be incorrect, or the page may have been moved or deleted.</p>
+        <Button url={`${base}${defaultRedirect}/`}> home </Button>
+    </div>
+</body>
+
+</html>
+
+<style>
+    .button{
+        height: 20px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    
+    body {
+        color: var(--text-color);
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100dvh;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+        padding: 40px;
+    }
+    h1 {
+        font-size: 6rem;
+        color: var(--error-color);
+        margin: 0;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin: 20px 0;
+    }
+
+    p {
+        font-size: 1rem;
+        max-width: 500px;
+        padding-bottom: 20px;
+    }
+
+    .emoji {
+        font-size: 8rem;
+    }
+</style>

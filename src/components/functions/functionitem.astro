@@ -1,0 +1,53 @@
+---
+const { t, index, link } = Astro.props;
+const item = t?.section?.functions?.items;
+
+import Button from "../shared/button.astro";
+---
+
+<div class="function-item">
+    <div class="function-item-icon">
+        <slot/>
+    </div>
+    <p class="function-item-title">{item[index].title}</p>
+    <p class="function-item-description">{item[index].description}</p>
+    <!-- <Button url={link} variant="color"> { item[index].button } </Button> -->
+</div>
+
+<style>
+    .function-item {
+        max-width: 300px;
+        color: var(--text-color);
+        display: inline-flex;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+        align-content: center;
+        gap: 10px;
+        padding: 20px;
+        justify-content: space-between;
+    }
+    .function-item-icon {
+        width: 50px;
+    }
+
+    .function-item-title {
+        text-align: center;
+        margin: 0%;
+        font-size: 20px;
+        width: 250px;
+    }
+
+    .function-item-description {
+        font-size: 14px;
+        width: 250px;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 300px) {
+        .function-item{
+            padding: 0px;
+        }
+    }
+
+</style>

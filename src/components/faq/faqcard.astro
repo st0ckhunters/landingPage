@@ -1,0 +1,67 @@
+---
+import FaqSvg from "../../lib/svg/faq.svg.astro";
+import Faqitem from "./faqitem.astro";
+
+const {t} = Astro.props;
+const item = t?.section?.faq;
+---
+<div class="faq-section">
+    <div class="image-container">
+        <FaqSvg aria-label="faq icon"></FaqSvg>
+    </div>
+
+    <div class="faq-content">
+        <p class="faq-title">{item?.title}</p>
+
+        <Faqitem t={t} index="0"/>
+        <Faqitem t={t} index="1"/>
+        <Faqitem t={t} index="2"/>
+        <Faqitem t={t} index="3"/>
+        <Faqitem t={t} index="4"/>
+    
+    </div>
+</div>
+
+<style>
+
+    .faq-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--text-color);
+
+    }
+
+    .faq-section {
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-evenly;
+        background-color: var(--secondary-bg-color);
+        flex-wrap: wrap;
+        margin: 40px 0 60px 0;
+    }
+    
+    .image-container {
+        width: 360px;
+    }
+
+</style>
+
+<script>
+    document.querySelectorAll(".question").forEach( button => {
+        
+        button.addEventListener("click", function(){
+            const container = this.closest(".question-container");
+            const answer = container.querySelector(".answer");
+
+            if(answer.style.display === "block") {
+                answer.style.display = "none";
+                this.querySelector(".toggle-btn").innerHTML = "➕";
+            } else {
+                answer.style.display = "block";
+                this.querySelector(".toggle-btn").innerHTML = "➖";
+            }
+        });
+    });
+
+</script>

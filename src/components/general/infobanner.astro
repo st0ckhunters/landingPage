@@ -1,0 +1,33 @@
+---
+import Button from "../shared/button.astro";
+const { t } = Astro.props;
+import {header} from "../../lib/linker"
+const item = t?.infoBanner;
+---
+<div class="moreinfo-section">
+    <div class="moreinfo-text-container">
+        <h2 class="moreinfo-title">{item.title}</h2>
+        <p class="moreinfo-text">{item.description}</p>
+    </div>
+    <div class="moreinfo-button">
+        <Button variant="white" url={header.contact_me}>{item.button}</Button>
+    </div>
+</div>
+
+<style>
+    .moreinfo-section {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 30px 0 30px 0;
+        background-color: var(--text-blue);
+        color: var(--text-white);
+        padding: 30px;
+        font-size: 14px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .moreinfo-button {
+        padding-top: 20px;
+    }
+</style>

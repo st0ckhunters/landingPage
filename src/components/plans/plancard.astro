@@ -1,0 +1,39 @@
+---
+const { t } = Astro.props;
+import Planitem from "./planitem.astro";
+
+const item = t?.section?.plans;
+---
+
+<div class="plan-section">
+    <h2>{item?.title}</h2>
+
+    <div class="plan-items">
+        <Planitem t={t} type="basic"></Planitem>
+        <Planitem t={t} type="pro" ></Planitem>
+        <Planitem t={t} type="enterprise" ></Planitem>
+    </div>
+</div>
+
+<style>
+    .plan-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
+        background-color: var(--bg-color);
+    }
+
+    .plan-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .plan-section h2 {
+        color: var(--text-color);
+    }
+
+</style>

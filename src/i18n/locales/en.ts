@@ -196,4 +196,17 @@ export default {
       "Start today with StockHunters and discover how we can help you optimize your inventory and increase your sales.",
     button: "Contact Us",
   },
+  pages: {
+    contact: {
+      title: "Contact Us",
+      description:
+        "Do you have questions or need assistance? Our team is here to help. Fill out the form and we’ll get back to you as soon as possible.",
+      form: {
+        name: "Name",
+        email: "Email",
+        message: "Message",
+        button: "Send Message",
+      },
+    },
+  },
 };

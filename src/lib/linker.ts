@@ -11,8 +11,8 @@ export const header = {
 };
 
 export const mainCard = {
-  buton1: "",
-  button2: "",
+  buton1: "https://stockhunters.github.io/Frontend-Web-Application/",
+  button2: "https://stockhunters.github.io/Frontend-Web-Application/",
 };
 
 export const functions = {
@@ -22,10 +22,10 @@ export const functions = {
 };
 
 export const plans = {
-  basic: "",
-  pro: "",
-  enterprise: "",
-}
+  basic: "https://stockhunters.github.io/Frontend-Web-Application/",
+  pro: "https://stockhunters.github.io/Frontend-Web-Application/",
+  enterprise: "./contact",
+};
 
 export const blog = {
   items: [

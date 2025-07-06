@@ -1,15 +1,17 @@
 ---
-const {description, imgpath, imgalt, name, job} = Astro.props;
+const {index, t, imgpath, imgalt} = Astro.props;
+
+const item = t?.section?.reviews?.items;
 ---
 <div class="review-card">
-    <div class="review-description">{description}</div>
+    <div class="review-description">{item[index].review}</div>
     <div class="review-contact-container">
         <div class="img-wrapper">
             <img src={imgpath} alt={imgalt}/>
         </div>
         <div class="review-contact">
-            <p class="review-name">{name}</p>
-            <p class="review-job">{job}</p>
+            <p class="review-name">{item[index].name}</p>
+            <p class="review-job">{item[index].position}</p>
         </div>
     </div>
 </div>

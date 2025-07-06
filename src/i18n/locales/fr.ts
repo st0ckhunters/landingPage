@@ -161,6 +161,20 @@ export default {
     },
     reviews: {
       title: "Témoignages de nos clients",
+      items: [
+        {
+          name: "Choijun Yeon",
+          position: "Entrepreneur",
+          review:
+            "Avant, je gérais les stocks avec des tableurs qui étaient toujours mal mis à jour. Depuis que j’utilise StockHunters, tout est automatisé. Je reçois des alertes lorsque le stock est faible et je peux voir mes ventes en temps réel. C’est comme avoir un assistant qui ne se trompe jamais.",
+        },
+        {
+          name: "Soob Kein",
+          position: "Ingénieur",
+          review:
+            "Nous avons implémenté StockHunters dans nos opérations pour centraliser la gestion des produits et des ventes dans nos succursales. La plateforme nous a permis de réduire les erreurs de stock de plus de 40 % et d’optimiser le temps de l’équipe. C’est un outil clé pour notre efficacité opérationnelle.",
+        },
+      ],
     },
     faq: {
       title: "Questions fréquentes",

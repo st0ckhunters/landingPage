@@ -160,6 +160,20 @@ export default {
     },
     reviews: {
       title: "Testimonios de Nuestros Clientes",
+      items: [
+        {
+          name: "Choijun Yeon",
+          position: "Empresario",
+          review:
+            "Antes llevaba el inventario con hojas de calculo que siempre terminaban mal actualizadas. Desde que uso StockHunters todo esta automatizado. Me llegan alertas cuando falta stock y puedo ver mis ventas en tiempo real. Es como tener un asistente que nunca falla.",
+        },
+        {
+          name: "Soob Kein",
+          position: "Ingeniero",
+          review:
+            "Implementamos StockHunters en nuestras operaciones para centralziar la gestion de productos y ventas en nuestras sucursales. La plataforma nos permitio reducir errores de inventario en mas del 40% y optimizar el tiempo del equipo. Es una herramienta clave para nuestra eficiencia operativa.",
+        },
+      ],
     },
     faq: {
       title: "Preguntas Frecuentes",
@@ -203,7 +217,7 @@ export default {
   },
 
   pages: {
-    contact:{
+    contact: {
       title: "Contáctanos",
       description:
         "¿Tienes preguntas o necesitas ayuda? Nuestro equipo está aquí para asistirte. Completa el formulario y nos pondremos en contacto contigo lo antes posible.",
@@ -213,7 +227,6 @@ export default {
         message: "Mensaje",
         button: "Enviar Mensaje",
       },
-    }
-  }
-
+    },
+  },
 };

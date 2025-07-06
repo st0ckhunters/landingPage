@@ -157,6 +157,20 @@ export default {
     },
     reviews: {
       title: "Customer Testimonials",
+      items: [
+        {
+          name: "Choijun Yeon",
+          position: "Entrepreneur",
+          review:
+            "I used to manage inventory with spreadsheets that were always out of date. Since I started using StockHunters, everything is automated. I get alerts when stock is low and can see my sales in real-time. It’s like having an assistant that never fails.",
+        },
+        {
+          name: "Soob Kein",
+          position: "Engineer",
+          review:
+            "We implemented StockHunters in our operations to centralize product and sales management across our branches. The platform allowed us to reduce inventory errors by more than 40% and optimize our team’s time. It’s a key tool for our operational efficiency.",
+        },
+      ],
     },
     faq: {
       title: "Frequently Asked Questions",

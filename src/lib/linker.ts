@@ -11,8 +11,8 @@ export const header = {
 };
 
 export const mainCard = {
-  buton1: "https://stockhunters.github.io/Frontend-Web-Application/",
-  button2: "https://stockhunters.github.io/Frontend-Web-Application/",
+  buton1: "https://st0ckhunters.github.io/Frontend-web-application/",
+  button2: "https://st0ckhunters.github.io/Frontend-web-application/",
 };
 
 export const functions = {
@@ -22,8 +22,8 @@ export const functions = {
 };
 
 export const plans = {
-  basic: "https://stockhunters.github.io/Frontend-Web-Application/",
-  pro: "https://stockhunters.github.io/Frontend-Web-Application/",
+  basic: "https://st0ckhunters.github.io/Frontend-web-application/",
+  pro: "https://st0ckhunters.github.io/Frontend-web-application/",
   enterprise: "./contact",
 };
 
